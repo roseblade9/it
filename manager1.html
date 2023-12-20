@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="manager.css">
+    <link rel="shortcut icon" type="image/x-icon" href="miku.png">
+    <title>Менеджер Заказов</title>
+</head>
+<body>
+    <header>
+        <h1>Менеджер заказов</h1>
+        <button onclick="goHome()">Домой</button>
+        <button id="add-order-btn" onclick="addNewOrder()">Добавить заказ</button>
+        
+        <button id="poi-order-btn" onclick="searchOrders()">Поиск</button>
+        
+    </header>
+    <div id="orders-container">
+        <div class="order-details">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Номер заказа</th>
+                        <th>Номер карты</th>
+                        <th>Сумма</th>
+                        <th>Имя клиента</th>
+                        <th>Статус заказа</th>
+                        <th>Комментарий</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table-body"></tbody>
+            </table>
+        </div>
+        <div id="back-button-container"></div>
+        <div id="deleted-orders-container" style="display: none;">
+          <h2>История удалённых заказов</h2>
+          <button id="clear-deleted-orders-btn" onclick="clearDeletedOrdersHistory()">Очистить историю</button>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Номер заказа</th>
+                      <th>Номер карты</th>
+                      <th>Сумма</th>
+                      <th>Имя клиента</th>
+                      <th>Статус заказа</th>
+                      <th>Комментарий</th>
+                      <th>Действия</th>
+                  </tr>
+              </thead>
+              <tbody id="deleted-orders-table-body"></tbody>
+          </table>
+      </div>
+        <button id="deleted-orders-btn" onclick="toggleDeletedOrdersVisibility()">История удалённых заказов</button>
+        <div id="deleted-orders-container" style="display: none;">
+            <h2>История заказов</h2>
+            <button id="clear-deleted-orders-btn" onclick="clearDeletedOrdersHistory()">Очистить историю</button>
+            <div id="deleted-orders"></div>
+        </div>
+    </div>
+
+    <script src="manager.js"></script>
+    
+    
+</body>
+</html>
